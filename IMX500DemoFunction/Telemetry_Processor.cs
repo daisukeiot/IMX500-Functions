@@ -17,7 +17,7 @@ namespace IMX500DemoFunction
 {
     public class Telemetry_Processor
     {
-        private const string Signalr_Hub = "sonysmartcarema";
+        private const string Signalr_Hub = "telemetryHub";
         private const string Consumer_Group = "telemetry-cg";
         //private static ModelParser _modelParser = null;
         private static ILogger _logger = null;
@@ -98,7 +98,7 @@ namespace IMX500DemoFunction
                             // send to SignalR Hub
                             var data = JsonConvert.SerializeObject(signalrData);
 
-                            _logger.LogInformation($"SignalR Message : {signalr_target}");
+                            _logger.LogInformation($"SignalR Message : {data.Length} {signalr_target}");
                             await signalRMessage.AddAsync(new SignalRMessage
                             {
                                 Target = signalr_target,
