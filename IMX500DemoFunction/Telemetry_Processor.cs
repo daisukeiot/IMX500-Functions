@@ -159,7 +159,7 @@ namespace IMX500DemoFunction
             string deviceId = eventData.SystemProperties["iothub-connection-device-id"].ToString();
             string componentName = string.Empty;
             string dtmi = string.Empty;
-            IReadOnlyDictionary<Dtmi, DTEntityInfo> parsedModel = null;
+            //IReadOnlyDictionary<Dtmi, DTEntityInfo> parsedModel = null;
 
             _logger.LogInformation($"OnTelemetryReceived");
 
