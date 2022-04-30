@@ -12,13 +12,13 @@ using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using static IMX500DemoFunction.Models;
 
 namespace IMX500DemoFunction
 {
     public class Telemetry_Processor
     {
         private const string Signalr_Hub = "telemetryHub";
-        private const string Consumer_Group = "telemetry-cg";
         //private static ModelParser _modelParser = null;
         private static ILogger _logger = null;
 
@@ -455,28 +455,6 @@ namespace IMX500DemoFunction
             }
 
             return data;
-        }
-
-        public class TELEMETRY_DATA
-        {
-            public string dataName { get; set; }
-            public string semanticType { get; set; }
-            public DTEntityKind dataKind { get; set; }
-            public double dataDouble { get; set; }
-            public double dataInteger { get; set; }
-            public string name { get; set; }
-            public string telmetryInterfaceId { get; set; }
-        }
-
-        public class SIGNALR_DATA
-        {
-            public string eventId { get; set; }
-            public string eventType { get; set; }
-            public string deviceId { get; set; }
-            public string eventSource { get; set; }
-            public string eventTime { get; set; }
-            public string data { get; set; }
-            public string dtDataSchema { get; set; }
         }
     }
 }
