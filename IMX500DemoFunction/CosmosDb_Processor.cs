@@ -82,8 +82,6 @@ namespace IMX500DemoFunction
                             }
                         }
 
-                        log.LogInformation($"test");
-
                         signalrData.inferenceResults.Add(inferenceResult);
                     }
                 }
@@ -92,7 +90,7 @@ namespace IMX500DemoFunction
                 var data = JsonConvert.SerializeObject(signalrData);
                 var signalr_target = "CosmosDb";
 
-                log.LogInformation($"SignalR Message : {data.Length} {signalr_target}");
+                log.LogInformation($"SignalR Message (CosmosDB) : {data.Length} {signalr_target}");
                 await signalRMessage.AddAsync(new SignalRMessage
                 {
                     Target = signalr_target,

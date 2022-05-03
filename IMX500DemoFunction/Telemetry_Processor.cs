@@ -98,7 +98,7 @@ namespace IMX500DemoFunction
                             // send to SignalR Hub
                             var data = JsonConvert.SerializeObject(signalrData);
 
-                            _logger.LogInformation($"SignalR Message : {data.Length} {signalr_target}");
+                            _logger.LogInformation($"SignalR Message (EventHub): {data.Length} {signalr_target}");
                             await signalRMessage.AddAsync(new SignalRMessage
                             {
                                 Target = signalr_target,
