@@ -19,7 +19,6 @@ namespace IMX500DemoFunction
     public class Telemetry_Processor
     {
         private const string Signalr_Hub = "telemetryHub";
-        //private static ModelParser _modelParser = null;
         private static ILogger _logger = null;
 
         [FunctionName("Telemetry_Processor")]
