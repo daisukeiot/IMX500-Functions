@@ -33,6 +33,11 @@ namespace IMX500DemoFunction
             public List<INFERENCE_RESULT> inferenceResults { get; set; }
         }
 
+        public class SIGNALR_BLOB_DATA
+        {
+            public string blobPath { get; set; }
+        }
+
         public class INFERENCE_ITEM
         {
             public int C { get; set; }
