@@ -11,11 +11,11 @@ using static IMX500DemoFunction.Models;
 
 namespace IMX500DemoFunction
 {
-    public class Blobl_Processor
+    public class Blob_Processor
     {
         private const string Signalr_Hub = "telemetryHub";
 
-        [FunctionName("Blobl_Processor")]
+        [FunctionName("Blob_Processor")]
         public async Task RunAsync([BlobTrigger(
                             "iothub-link/{name}", 
                             Connection = "BlobConnectionString")]Stream myBlob, 

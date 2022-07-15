@@ -1,0 +1,13 @@
+﻿{
+	"disabled": false,
+	"bindings": [
+		{
+			"type": "blobTrigger",
+			"direction": "in",
+			"connection": "BlobConnectionString",
+			"path": "iothub-link/~{name}.jpg",
+			"source": "logsAndContainerScan",
+			"name": "myBlob"
+		}
+	]
+}
