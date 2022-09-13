@@ -1,5 +1,7 @@
 using System;
+using System.Globalization;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents.SystemFunctions;
 using Microsoft.Azure.WebJobs;
@@ -25,6 +27,32 @@ namespace IMX500DemoFunction
         {
             log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
+            // we are only interested in new data
+            try
+            {
+                DateTime dt;
+                var nameArray = name.Split('/');
+                var blobDate = nameArray[2];
+                var result = DateTime.TryParseExact(blobDate, "yyyyMMddHHmmssfff", null, System.Globalization.DateTimeStyles.None, out dt);
+
+                if (result)
+                {
+                    DateTime now = DateTime.Now;
+
+                    if (now.Date > dt.Date)
+                    {
+                        return;
+                    }
+                }
+                else
+                {
+                    log.LogWarning($"Failed to parse date from blob path : {blobDate}");
+                }
+            }
+            catch (Exception e)
+            {
+                log.LogWarning($"Failed to parse date from blob path {name} : {e}");
+            }
             //// Initialize SignalR Data
             SIGNALR_BLOB_DATA signalrData = new SIGNALR_BLOB_DATA
             {

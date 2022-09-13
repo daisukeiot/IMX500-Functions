@@ -17,6 +17,7 @@ namespace IMX500DemoFunction
     public static class CosmosDb_Processor
     {
         private const string Signalr_Hub = "telemetryHub";
+        private const string LeaseCollectionPrefix = "%SOLCosmosDbLeasePrefix%";
 
         [FunctionName("CosmosDb_Processor")]
         public static async Task RunAsync([CosmosDBTrigger(
@@ -24,6 +25,7 @@ namespace IMX500DemoFunction
             collectionName: "InferenceResult",
             ConnectionStringSetting = "CosmosDbConnectionString",
             LeaseCollectionName = "leases",
+            LeaseCollectionPrefix = LeaseCollectionPrefix,
             CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,
             [SignalR(HubName = Signalr_Hub)] IAsyncCollector<SignalRMessage> signalRMessage,
             ILogger log)

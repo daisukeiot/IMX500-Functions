@@ -34,6 +34,13 @@ namespace IMX500DemoFunction
             {
                 try
                 {
+                    DateTime now = DateTime.Now;
+
+                    if (now.Date > ed.EnqueuedTime.Date)
+                    {
+                        continue;
+                    }
+
                     if (ed.SystemProperties.ContainsKey("iothub-message-source"))
                     {
                         // look for device id
