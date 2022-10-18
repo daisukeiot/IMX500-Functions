@@ -3,10 +3,10 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "AzureSignalRConnectionString": "Endpoint=https://sonyimxsignalr-aad.service.signalr.net;AccessKey=pA/Ael+UpB4ZszgCnbJZsFwF85hCpHBti5ePs8mWoXk=;Version=1.0;",
-    "EventHubConnectionString": "Endpoint=sb://event-labstaging05.servicebus.windows.net/;SharedAccessKeyName=telemetryListen;SharedAccessKey=eY/zuOP1R7MSwpsNp4yAgSM8L3TjJtr5UgYn8aLMLKE=;EntityPath=sonysmartcarema",
-    "CosmosDbConnectionString": "AccountEndpoint=https://cosmos-labstaging05.documents.azure.com:443/;AccountKey=QURvlMHpMhXFCJpHFxsmgEFl2xjwC3LioqTDhYKLt4MOkkvKtbe8WWwc8EyC6IfNUMztcDNGASnc8Xb1yVK2jQ==;",
-    "BlobConnectionString": "DefaultEndpointsProtocol=https;AccountName=stdatalabstaging05;AccountKey=ElrcSe+bZEfaaFL+iyblmUINWbCHw+w0mEMJ3j03+2vpJJw2JPh9djmSbd6W3jRxY7lTN3bSisdUrpjGpxXR0g==;EndpointSuffix=core.windows.net",
-    "SOLCosmosDbLeasePrefix": "AAD"
+    "AzureSignalRConnectionString": "",
+    "EventHubConnectionString": "",
+    "CosmosDbConnectionString": "",
+    "BlobConnectionString": "",
+    "SOLCosmosDbLeasePrefix": ""
   }
 }
